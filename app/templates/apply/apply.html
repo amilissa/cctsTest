@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'apply.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h4>I. PERSONAL INFORMATION</h4>
+    </div>
+</div>
+<div class="wrapper">
+    <form action="/save" method="post">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label><label style="color: red">*</label>SUR NAME:</label>
+                    <input type="text" class="form-control" id="sur_name" required>
+                </div>
+                <div class="form-group">
+                    <label><label style="color: red">*</label>FIRST NAME:</label>
+                    <input type="text" class="form-control" id="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label>MIDDLE NAME:</label>
+                    <input type="text" class="form-control" id="middle_name">
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>NAME EXTENSION:</label>
+                            <input type="text" class="form-control" placeholder="JR., SR." id="name_ext">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label style="color: red">*</label>DATE OF BIRTH:</label>
+                            <input type="date" class="form-control" id="dob" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>SEX:</label>
+                            <label for="Male" class="col-4">
+                                <input type="radio" id="Male" name="gender" value="Male"><br>
+                                Male</label>
+                            <label for="Female" class="col-4">
+                                <input type="radio" id="Female" name="gender" value="Female"><br>
+                                Female</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group" id="div_civil_status">
+                            <label>CIVIL STATUS:</label>
+                            <label for="Single" class="col-3">
+                                <input type="radio" id="Single" name="civil_status" value="Single">
+                                Single</label>
+                            <label for="Widowed" class="col-3">
+                                <input type="radio" id="Widowed" name="civil_status" value="Widowed">
+                                Widowed</label>
+                            <label for="Married" class="col-3">
+                                <input type="radio" id="Married" name="civil_status" value="Married">
+                                Married</label>
+                            <label for="Separated" class="col-3">
+                                <input type="radio" id="Separated" name="civil_status" value="Separated">
+                                Separated</label>
+                            <label for="Others_cs" class="col-5" style="float:right;">
+                                <input type="radio" id="Others_cs" name="civil_status" value="Others">
+                                Others</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label>NAME EXTENSION:</label>
+                    <input type="text" class="form-control" placeholder="JR., SR." id="name_ext" required>
+                </div>
+                <div class="form-group">
+                    <label>NAME EXTENSION:</label>
+                    <input type="text" class="form-control" placeholder="JR., SR." id="name_ext" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+</div>
+{% endblock content%}

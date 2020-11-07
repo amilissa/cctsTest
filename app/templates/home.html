@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>HELLO THIS IS HOME PAGE</h1>
+        {% for post in posts %}
+            <h1>{{ post.name}}</h1>
+            <h2>{{post.job}}</h2>
+            <h3>{{post.date_apply}}</h3>
+        {% endfor %}
+{% endblock content%}
