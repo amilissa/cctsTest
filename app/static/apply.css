@@ -249,10 +249,7 @@ h6 {
   margin: 0 auto;
   padding: 40px;
   background-color: #ffff;
-  max-height: 2000px;  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-height: 3000px;
   width: 100%;
   max-width: 1000px;
   padding: 30px;

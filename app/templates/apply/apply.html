@@ -17,6 +17,10 @@ $(document).ready(function(){
         }
     });
 });
+
+
+
+
 </script>
 {% endblock %}
 
@@ -212,13 +216,27 @@ $(document).ready(function(){
                         </div>
                     </div>
                 </div>
-
-
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <label>TELEPHONE NO.:</label>
+                        <input type="text" class="form-control" id="tel_no">
+                    </div>
+                    <div class="flex-item-right">
+                        <label class="redlabel"><b>*</b></label><label>MOBILE NO.:</label>
+                        <input type="text" class="form-control" id="mobile_no">
+                    </div>
+                </div>
+                <label>EMAIL ADDRESS (if any):</label>
+                <input type="text" class="form-control" id="email_address">
 
             </div>
 
         </div>
+        <div class="tunga">
+            <button type="submit" class="btn btn-primary">BACK</button>
+            <button type="submit" class="btn btn-primary">NEXT</button>
+        </div>
     </form>
 </div>
+
 {% endblock content%}
