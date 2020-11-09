@@ -5,7 +5,17 @@
 .font-robo {
   font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
 }
-
+body {
+  margin-top: 5rem;
+  padding-top: 100px; /* This should be equal to the height of your header */
+  overflow-x: hidden;
+}
+.navbar{
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
 .font-poppins {
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
 }
@@ -126,15 +136,20 @@ button {
 
 body {
   margin-top: 5rem;
-  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 1rem;
   background-color: #B5B5B5;
 }
-
+.form-control{
+margin-bottom: .5rem;
+}
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
+#form-pds {
+
+  font-size: 12px;
+  }
 
 h1 {
   font-size: 36px;
@@ -234,13 +249,69 @@ h6 {
   margin: 0 auto;
   padding: 40px;
   background-color: #ffff;
-  max-height: 960px;
+  max-height: 3000px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+}
+.input-fields,
+.secondrow{
+  width: 48%;
+}
+
+.contact-form{
+  display: flex;
+}
+.wrapper .title h4{
+  text-align: left;
+  margin-bottom: 10px;
+}
+.input-fields{
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
 }
 #div_civil_status{
-border-style: groove;
 content-margin: 5px;
 }
 
+@media screen and (max-width: 600px){
+  .contact-form{
+    flex-direction: column;
+  }
+  .input-fields,
+  .secondrow{
+    width: 100%;
+  }
+}
+.redlabel{
+color:red
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item-left {
+  padding: 5px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  padding: 5px;
+  flex: 50%;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
 .wrapper--w960 {
   max-width: 960px;
 }
@@ -416,8 +487,7 @@ input {
   font-size: 16px;
   color: #555;
   text-transform: capitalize;
-  display: block;
-  margin-bottom: 5px;
+  display: inline;
 }
 
 .radio-container {
@@ -611,12 +681,7 @@ input {
 /* ==========================================================================
    #TITLE
    ========================================================================== */
-.title {
-  font-size: 24px;
-  color: #525252;
-  font-weight: 400;
-  margin-bottom: 40px;
-}
+
 
 /* ==========================================================================
    #CARD
@@ -627,7 +692,15 @@ input {
   border-radius: 3px;
   background: #fff;
 }
-
+.tunga{
+text-align:center;
+}
+.checkbox {
+  display: inline-block;
+}
+.same{
+  display: inline;
+  }
 .card-4 {
   background: #fff;
   -webkit-border-radius: 10px;

@@ -3,61 +3,74 @@
 
 {% block styles %}
 <link rel="stylesheet" type="text/css" href="{% static 'apply.css' %}">
-
 {% endblock %}
 
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}">
+$(document).ready(function(){
+    $("#same").change(function(){
+        if(this.checked){
+        console.log("hey");
+            $('#permanent_address').show();
+        }else{
+            $('#permanent_address').hide();
+        }
+    });
+});
+
+
+
+
+</script>
+{% endblock %}
+
+
 {% block content %}
-<div class="row">
-    <div class="col-12">
+
+<div class="wrapper" id="form-pds">
+    <div class="title">
         <h4>I. PERSONAL INFORMATION</h4>
     </div>
-</div>
-<div class="wrapper">
     <form action="/save" method="post">
-        <div class="row">
-            <div class="col-6">
-                <div class="form-group">
-                    <label><label style="color: red">*</label>SUR NAME:</label>
-                    <input type="text" class="form-control" id="sur_name" required>
-                </div>
-                <div class="form-group">
-                    <label><label style="color: red">*</label>FIRST NAME:</label>
-                    <input type="text" class="form-control" id="first_name" required>
-                </div>
-                <div class="form-group">
-                    <label>MIDDLE NAME:</label>
-                    <input type="text" class="form-control" id="middle_name">
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>NAME EXTENSION:</label>
-                            <input type="text" class="form-control" placeholder="JR., SR." id="name_ext">
-                        </div>
+        <div class="contact-form">
+            <div class="input-fields">
+                <label><label class="redlabel"><b>*</b></label>SUR NAME:</label>
+                <input type="text" class="form-control" id="sur_name" required>
+                <label><label class="redlabel"><b>*</b></label>FIRST NAME:</label>
+                <input type="text" class="form-control" id="first_name" required>
+                <label>MIDDLE NAME:</label>
+                <input type="text" class="form-control" id="middle_name">
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <label>NAME EXTENSION:</label>
+                        <input type="text" class="form-control" placeholder="JR., SR." id="name_ext">
                     </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label style="color: red">*</label>DATE OF BIRTH:</label>
-                            <input type="date" class="form-control" id="dob" required>
-                        </div>
+                    <div class="flex-item-right">
+                        <label><label class="redlabel"><b>*</b></label>DATE OF BIRTH:</label>
+                        <input type="date" class="form-control" id="dob" required>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>SEX:</label>
-                            <label for="Male" class="col-4">
-                                <input type="radio" id="Male" name="gender" value="Male"><br>
-                                Male</label>
-                            <label for="Female" class="col-4">
-                                <input type="radio" id="Female" name="gender" value="Female"><br>
-                                Female</label>
-                        </div>
+
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <label><label class="redlabel"><b>*</b></label>SEX:</label>
+                        <label for="Male" class="col-4">
+                            <input type="radio" id="Male" name="gender" value="Male"><br>
+                            Male</label>
+                        <label for="Female" class="col-4">
+                            <input type="radio" id="Female" name="gender" value="Female"><br>
+                            Female</label>
                     </div>
+<<<<<<< HEAD
                     <div class="col-6">
 
                         <div class="form-group" id="div_civil_status">
                             <label>CIVIL STATUS:</label>
+=======
+                    <div class="flex-item-right">
+                        <div id="div_civil_status">
+                            <label><label class="redlabel"><b>*</b></label>CIVIL STATUS:</label>
+>>>>>>> 2acd2116286a0490dbdd3f67a5d12da285b1baf8
                             <label for="Single" class="col-3">
                                 <input type="radio" id="Single" name="civil_status" value="Single">
                                 Single</label>
@@ -75,26 +88,162 @@
                                 Others</label>
                         </div>
                     </div>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <label><label class="redlabel"><b>*</b></label>HEIGHT(m):</label>
+                        <input type="text" class="form-control" id="height" required>
+                    </div>
+                    <div class="flex-item-right">
+                        <label><label class="redlabel"><b>*</b></label>WEIGHT(kg):</label>
+                        <input type="text" class="form-control" id="weight" required>
 
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>NAME EXTENSION:</label>
-                    <input type="text" class="form-control" placeholder="JR., SR." id="name_ext" required>
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <label>GSIS ID NO.:</label>
+                        <input type="text" class="form-control" id="gsis_id">
+                    </div>
+                    <div class="flex-item-right">
+                        <label>PAG-IBIG ID NO.:</label>
+                        <input type="text" class="form-control" id="pagibig_id">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>NAME EXTENSION:</label>
-                    <input type="text" class="form-control" placeholder="JR., SR." id="name_ext" required>
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <label>PHILHEALTH NO.:</label>
+                        <input type="text" class="form-control" id="philhealth_id">
+                    </div>
+                    <div class="flex-item-right">
+                        <label>SSS NO.:</label>
+                        <input type="text" class="form-control" id="sss_id">
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <label>TIN NO.:</label>
+                        <input type="text" class="form-control" id="tin_id">
+                    </div>
+                    <div class="flex-item-right">
+                        <label>AGENCY EMPLOYEE NO.:</label>
+                        <input type="text" class="form-control" id="employee_id">
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="secondrow">
+                <div class="form-group">
+                    <label><label class="redlabel"><b>*</b></label>CITIZENSHIP:</label>
+                    <select class="form-control" name="citizenship" id="citizenship">
+                        <option value="0">Filipino</option>
+                        <option value="1">Dual Citizenship by birth</option>
+                        <option value="2">Dual Citizenship by naturalization</option>
+                    </select>
+                </div>
+                <label><label class="redlabel"><b>*</b></label>RESIDENTIAL ADDRESS:</label>
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <input type="text" class="form-control" id="res_lot_no">
+                        <div class="tunga">
+                            <small>House/Block/Lot no.</small>
+                        </div>
+                    </div>
+                    <div class="flex-item-left">
+                        <input type="text" class="form-control" id="res_street">
+                        <div class="tunga">
+                            <small>Street</small>
+                        </div>
+                    </div>
+                    <div class="flex-item-left">
+                        <input type="text" class="form-control" id="res_subd">
+                        <div class="tunga">
+                            <small>Subdivision/Village</small>
+                        </div>
+                    </div>
+                    <div class="flex-item-right">
+                        <input type="text" class="form-control" id="res_brgy">
+                        <div class="tunga">
+                            <small>Barangay</small>
+                        </div>
+                    </div>
+                    <div class="flex-item-right">
+                        <input type="text" class="form-control" id="res_city">
+                        <div class="tunga">
+                            <small>City/Municipality</small>
+                        </div>
+                    </div>
+                    <div class="flex-item-right">
+                        <input type="text" class="form-control" id="res_province">
+                        <div class="tunga">
+                            <small>Province</small>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="col-6">
-            <div class="checkbox">
-                <label><input type="checkbox"> Remember me</label>
+                <div class="container">
+                    <label><label class="redlabel"><b>*</b></label>PERMANENT ADDRESS:</label>
+                    <br>
+                    <label class="checkbox-inline">Same <input class="checkbox" id="same" type="checkbox"></label>
+                    <div class="flex-container" id="permanent_address">
+                        <div class="flex-item-left">
+                            <input type="text" class="form-control" id="per_lot_no">
+                            <div class="tunga">
+                                <small>House/Block/Lot no.</small>
+                            </div>
+                        </div>
+                        <div class="flex-item-left">
+                            <input type="text" class="form-control" id="per_street">
+                            <div class="tunga">
+                                <small>Street</small>
+                            </div>
+                        </div>
+                        <div class="flex-item-left">
+                            <input type="text" class="form-control" id="per_subd">
+                            <div class="tunga">
+                                <small>Subdivision/Village</small>
+                            </div>
+                        </div>
+                        <div class="flex-item-right">
+                            <input type="text" class="form-control" id="per_brgy">
+                            <div class="tunga">
+                                <small>Barangay</small>
+                            </div>
+                        </div>
+                        <div class="flex-item-right">
+                            <input type="text" class="form-control" id="per_city">
+                            <div class="tunga">
+                                <small>City/Municipality</small>
+                            </div>
+                        </div>
+                        <div class="flex-item-right">
+                            <input type="text" class="form-control" id="per_province">
+                            <div class="tunga">
+                                <small>Province</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-item-left">
+                        <label>TELEPHONE NO.:</label>
+                        <input type="text" class="form-control" id="tel_no">
+                    </div>
+                    <div class="flex-item-right">
+                        <label class="redlabel"><b>*</b></label><label>MOBILE NO.:</label>
+                        <input type="text" class="form-control" id="mobile_no">
+                    </div>
+                </div>
+                <label>EMAIL ADDRESS (if any):</label>
+                <input type="text" class="form-control" id="email_address">
+
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
 
+        </div>
+        <div class="tunga">
+            <button type="submit" class="btn btn-primary">BACK</button>
+            <button type="submit" class="btn btn-primary">NEXT</button>
+        </div>
     </form>
 </div>
+
 {% endblock content%}
